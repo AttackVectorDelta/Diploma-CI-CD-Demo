@@ -1,7 +1,5 @@
 const assert = require('chai').assert;
-const expect = require('chai').expect;
 const Vector4f = require('../Vector4f');
-const { dotProduct } = require('../Vector4f');
 
 describe('Vector4f class tests', function() {
     //Constructor test
@@ -29,8 +27,8 @@ describe('Vector4f class tests', function() {
         assert.equal(-14.2456452, vectorObj.h);
     });
 
-    it('Negate function incorrect input test', function() {
-        expect(Vector4f.negate.bind("This is a test")).to.throw("Parameter is not a vector!");
+    it('Negate incorrect input test', function() {
+        assert.throws(function() {Vector4f.negate()},"Parameter is not a vector!");
     });
 
     //Add function tests
@@ -49,12 +47,12 @@ describe('Vector4f class tests', function() {
         assert.equal(-14.2, vectorObj.h);
     });
 
-    it('Add function incorrect input test', function() {
+    it('Add incorrect input test', function() {
 
         let vectorObj = new Vector4f(1,-2,3.1,-4.2);
 
-        expect(Vector4f.add.bind("This is a test", vectorObj)).to.throw("Parameters are not vectors!");
-        expect(Vector4f.add.bind(vectorObj, "If the function works")).to.throw("Parameters are not vectors!");
+        assert.throws(function() {Vector4f.add("This is a test", vectorObj)},"Parameters are not vectors!");
+        assert.throws(function() {Vector4f.add(vectorObj, "If the function works")},"Parameters are not vectors!");
     });
 
     //ScalarProduct function tests
@@ -80,12 +78,12 @@ describe('Vector4f class tests', function() {
         assert.equal(4, vectorObj.h);
     });
 
-    it('ScalarProduct function incorrect input test', function() {
+    it('ScalarProduct incorrect input test', function() {
 
         let vectorObj = new Vector4f(1,-2,3.1,-4.2);
 
-        expect(Vector4f.scalarProduct.bind("This is a test", vectorObj)).to.throw("Check parameter types!");
-        expect(Vector4f.scalarProduct.bind(3, "See if it fails")).to.throw("Check parameter types!");
+        assert.throws(function() {Vector4f.scalarProduct("This is a test", vectorObj)},"Check parameter types!");
+        assert.throws(function() {Vector4f.scalarProduct(vectorObj, "See if it fails")},"Check parameter types!");
     });
 
     //DotProduct function tests
@@ -104,8 +102,8 @@ describe('Vector4f class tests', function() {
         let vectorObj1 = new Vector4f(4.2, -2, 5.7, -14.2);
         let vectorObj2 = new Vector4f(1,-2,3.1,-4.2);
 
-        expect(Vector4f.dotProduct.bind("This is a test", vectorObj2)).to.throw("Parameters are not vectors!");
-        expect(Vector4f.dotProduct.bind(vectorObj1, 3)).to.throw("Parameters are not vectors!");
+        assert.throws(function() {Vector4f.dotProduct("This is a test", vectorObj2)},"Parameters are not vectors!");
+        assert.throws(function() {Vector4f.dotProduct(vectorObj1, undefined)},"Parameters are not vectors!");
     });
     
   
@@ -128,8 +126,8 @@ describe('Vector4f class tests', function() {
         let vectorObj1 = new Vector4f(4.2, -2, 5.7, -14.2);
         let vectorObj2 = new Vector4f(1,-2,3.1,-4.2);
 
-        expect(Vector4f.crossProduct.bind("This is a test", vectorObj2)).to.throw("Parameters are not vectors!");
-        expect(Vector4f.crossProduct.bind(vectorObj1, undefined)).to.throw("Parameters are not vectors!");
+        assert.throws(function() {Vector4f.crossProduct("This is a test", vectorObj2)},"Parameters are not vectors!");
+        assert.throws(function() {Vector4f.crossProduct(vectorObj1, undefined)},"Parameters are not vectors!");
     });
 
     //Length function tests
@@ -144,7 +142,7 @@ describe('Vector4f class tests', function() {
     });
 
     it('Length incorrect input test', function() {
-        expect(Vector4f.length.bind("This is a test")).to.throw("Parameters are not vectors!");
+        assert.throws(function() { Vector4f.length("This is a test") },"Parameters are not vectors!");
     });
 
 
@@ -170,7 +168,7 @@ describe('Vector4f class tests', function() {
     });
 
     it('Normalize incorrect input test', function() {
-        expect(Vector4f.normalize.bind("This is a test")).to.throw("Parameters are not vectors!");
+        assert.throws(function() { Vector4f.normalize("This is a test") },"Parameters are not vectors!");
     });
 
     //Project function tests
@@ -201,8 +199,8 @@ describe('Vector4f class tests', function() {
         let vectorObj1 = new Vector4f(4.2, -2, 5.7, -14.2);
         let vectorObj2 = new Vector4f(1,-2,3.1,-4.2);
 
-        expect(Vector4f.project.bind("This is a test", vectorObj2)).to.throw("Parameters are not vectors!");
-        expect(Vector4f.project.bind(vectorObj1, undefined)).to.throw("Parameters are not vectors!");
+        assert.throws(function() {Vector4f.project("This is a test", vectorObj2)},"Parameters are not vectors!");
+        assert.throws(function() {Vector4f.project(vectorObj1, undefined)},"Parameters are not vectors!");
     });
 
     //CosPhi function tests
@@ -227,11 +225,11 @@ describe('Vector4f class tests', function() {
 
     });
 
-    it('Project incorrect input test', function() {
+    it('CosPhi incorrect input test', function() {
         let vectorObj1 = new Vector4f(4.2, -2, 5.7, -14.2);
         let vectorObj2 = new Vector4f(1,-2,3.1,-4.2);
 
-        expect(Vector4f.cosPhi.bind("This is a test", vectorObj2)).to.throw("Parameters are not vectors!");
-        expect(Vector4f.cosPhi.bind(vectorObj1, undefined)).to.throw("Parameters are not vectors!");
+        assert.throws(function() { Vector4f.cosPhi("This is a test", vectorObj2) },"Parameters are not vectors!");
+        assert.throws(function() { Vector4f.cosPhi(vectorObj1, undefined) },"Parameters are not vectors!");
     });
 })
