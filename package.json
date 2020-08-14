@@ -4,8 +4,9 @@
   "description": "A simple JS app used to demonstrate GitHub's CI/CD functions",
   "main": "app.js",
   "scripts": {
-    "dev": "node app.js",
-    "test": "mocha"
+    "start": "NODE_ENV=production node app.js",
+    "dev": "NODE_ENV=development node app.js",
+    "test": "NODE_ENV=test mocha --recursive --exit"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^8.1.1"
+    "mocha": "^8.1.1",
+    "supertest": "^4.0.2"
   }
 }
