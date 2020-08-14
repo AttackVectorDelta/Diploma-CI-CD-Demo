@@ -8,7 +8,11 @@ const middlewares = require('./middlewares')
 const app = express();
 
 app.use(express.json());
-app.use(morgan('common'));
+
+if(process.env.NODE_ENV != 'test'){
+    app.use(morgan('common'));
+}
+
 app.use(helmet());
 
 //Middleware
@@ -20,3 +24,5 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Listening at http://localhost:${PORT}`)
 });
+
+module.exports = app;

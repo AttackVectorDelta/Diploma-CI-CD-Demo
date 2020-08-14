@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const Vector4f = require('../Vector4f');
+const Vector4f = require('../../js/Vector4f');
 
 describe('Vector4f class tests', function() {
     //Constructor test
