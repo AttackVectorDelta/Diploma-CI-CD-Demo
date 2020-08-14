@@ -4,6 +4,7 @@
   "description": "A simple JS app used to demonstrate GitHub's CI/CD functions",
   "main": "app.js",
   "scripts": {
+    "dev": "node app.js",
     "test": "mocha"
   },
   "repository": {
@@ -16,6 +17,11 @@
     "url": "https://github.com/AttackVectorDelta/Diploma-CI-CD-Demo/issues"
   },
   "homepage": "https://github.com/AttackVectorDelta/Diploma-CI-CD-Demo#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^4.0.0",
+    "morgan": "^1.10.0"
+  },
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^8.1.1"
