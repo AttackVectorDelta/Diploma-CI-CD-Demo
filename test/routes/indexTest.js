@@ -6,9 +6,10 @@ describe('Server function tests', function() {
     it('Serving index page', function(done) {
         request(app)
          .get('/')
+         .expect(200)
          .end(function(err, res) {
             if(err){
-                done(err);
+                return done(err);
             }
 
             expect(res.text).to.include("<h1>Welcome to the demo page!<\/h1>");
@@ -19,6 +20,7 @@ describe('Server function tests', function() {
     it('Serving vectors page', function(done){
         request(app)
          .get('/vectors')
+         .expect(200)
          .end(function(err, res) {
             if(err){
                 return done(err);

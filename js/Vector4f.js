@@ -10,7 +10,7 @@ class Vector4f {
 
     static negate(input){
         if(input instanceof Vector4f != true){
-            throw new Error("Parameter is not a vector!");
+            throw "Parameter is not a vector!";
         }
 
         return new Vector4f(-input.x, -input.y, -input.z, input.h);
@@ -73,13 +73,14 @@ class Vector4f {
         var vectorLength = this.length(input);
 
         if(vectorLength==0){
-            throw Error("Vector length is equal to 0. Cannot divide!");
+            throw "Vector length is equal to 0. Cannot divide!";
         }
 
         return new Vector4f(
             input.x/vectorLength,
             input.y/vectorLength,
-            input.z/vectorLength
+            input.z/vectorLength,
+            input.h
         );
     }
 
@@ -113,7 +114,7 @@ class Vector4f {
         var product = this.dotProduct(input1, input2);
 
         if(input1Length*input2Length == 0){
-            throw ("Sum of vector lengths equals 0. Cannot divide!")
+            throw "Sum of vector lengths equals 0. Cannot divide!";
         }
 
         return product/(input1Length*input2Length);

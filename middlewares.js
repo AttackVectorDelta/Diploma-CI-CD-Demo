@@ -9,7 +9,7 @@ const general = (error, req, res, next) => {
     res.status(statusCode);
     res.json({
         status: statusCode,
-        message: "Something went wrong!"
+        message: error
     })
 };
 
