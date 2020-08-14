@@ -19,7 +19,7 @@ describe('Server function tests', function() {
 
     it('Serving vectors page', function(done){
         request(app)
-         .get('/vectors')
+         .get('/vector')
          .expect(200)
          .end(function(err, res) {
             if(err){

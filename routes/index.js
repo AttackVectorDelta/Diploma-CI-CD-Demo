@@ -6,8 +6,8 @@ router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../public', 'index.html'));
 })
 
-router.get('/vectors', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public', 'vectors.html'));
+router.get('/vector', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public', 'vector.html'));
 })
 
 module.exports = router;

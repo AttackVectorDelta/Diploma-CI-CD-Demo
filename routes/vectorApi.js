@@ -3,7 +3,7 @@ const express = require('express');
 const Vector4f = require('../js/Vector4f');
 const router = express.Router();
 
-router.post('/vectors/negate', (req, res) => {
+router.post('/negate', (req, res) => {
     if(!req.body.vector || req.body.vector.x == undefined || req.body.vector.y  == undefined || req.body.vector.z  == undefined){
         res.status(400).json({message: "Invalid input params!"});
         return;
@@ -22,7 +22,7 @@ router.post('/vectors/negate', (req, res) => {
     });
 });
 
-router.post('/vectors/add', (req, res) => {
+router.post('/add', (req, res) => {
     if(!req.body.vector1 || req.body.vector1.x == undefined || req.body.vector1.y  == undefined || req.body.vector1.z  == undefined){
         res.status(400).json({message: "Invalid input params!"});
         return;
@@ -48,7 +48,7 @@ router.post('/vectors/add', (req, res) => {
     });
 });
 
-router.post('/vectors/scalar', (req, res) => {
+router.post('/scalar', (req, res) => {
     if(!req.body.vector || req.body.vector.x == undefined || req.body.vector.y  == undefined || req.body.vector.z  == undefined){
         res.status(400).json({message: "Invalid input params!"});
         return;
@@ -72,7 +72,7 @@ router.post('/vectors/scalar', (req, res) => {
     });
 });
 
-router.post('/vectors/dot', (req, res) => {
+router.post('/dot', (req, res) => {
     if(!req.body.vector1 || req.body.vector1.x == undefined || req.body.vector1.y  == undefined || req.body.vector1.z  == undefined){
         res.status(400).json({message: "Invalid input params!"});
         return;
@@ -93,7 +93,7 @@ router.post('/vectors/dot', (req, res) => {
     });
 });
 
-router.post('/vectors/cross', (req, res) => {
+router.post('/cross', (req, res) => {
     if(!req.body.vector1 || req.body.vector1.x == undefined || req.body.vector1.y  == undefined || req.body.vector1.z  == undefined){
         res.status(400).json({message: "Invalid input params!"});
         return;
@@ -119,7 +119,7 @@ router.post('/vectors/cross', (req, res) => {
     });
 });
 
-router.post('/vectors/length', (req, res) => {
+router.post('/length', (req, res) => {
     if(!req.body.vector || req.body.vector.x == undefined || req.body.vector.y  == undefined || req.body.vector.z  == undefined){
         res.status(400).json({message: "Invalid input params!"});
         return;
@@ -133,7 +133,7 @@ router.post('/vectors/length', (req, res) => {
     });
 });
 
-router.post('/vectors/normalize', (req, res) => {
+router.post('/normalize', (req, res) => {
     if(!req.body.vector || req.body.vector.x == undefined || req.body.vector.y  == undefined || req.body.vector.z  == undefined){
         res.status(400).json({message: "Invalid input params!"});
         return;
@@ -152,7 +152,7 @@ router.post('/vectors/normalize', (req, res) => {
     });
 });
 
-router.post('/vectors/project', (req, res) => {
+router.post('/project', (req, res) => {
     if(!req.body.vector1 || req.body.vector1.x == undefined || req.body.vector1.y  == undefined || req.body.vector1.z  == undefined){
         res.status(400).json({message: "Invalid input params!"});
         return;
@@ -178,7 +178,7 @@ router.post('/vectors/project', (req, res) => {
     });
 });
 
-router.post('/vectors/cosphi', (req, res) => {
+router.post('/cosphi', (req, res) => {
     if(!req.body.vector1 || req.body.vector1.x == undefined || req.body.vector1.y  == undefined || req.body.vector1.z  == undefined){
         res.status(400).json({message: "Invalid input params!"});
         return;

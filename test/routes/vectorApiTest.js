@@ -5,7 +5,7 @@ const app = require('../../app');
 describe('Vector API function tests', function() {
     it('Negate API call', function(done) {
         request(app)
-         .post('/api/vectors/negate')
+         .post('/api/vector/negate')
          .send({
              vector: {
                 x: 1,
@@ -35,7 +35,7 @@ describe('Vector API function tests', function() {
 
     it('Add API call', function(done) {
         request(app)
-         .post('/api/vectors/add')
+         .post('/api/vector/add')
          .send({
              vector1: {
                 x: 1,
@@ -71,7 +71,7 @@ describe('Vector API function tests', function() {
 
     it('Scalar API call', function(done) {
         request(app)
-         .post('/api/vectors/scalar')
+         .post('/api/vector/scalar')
          .send({
              scalar: 1.5,
              vector: {
@@ -102,7 +102,7 @@ describe('Vector API function tests', function() {
 
     it('Dot API call', function(done) {
         request(app)
-         .post('/api/vectors/dot')
+         .post('/api/vector/dot')
          .send({
              vector1: {
                 x: 2,
@@ -133,7 +133,7 @@ describe('Vector API function tests', function() {
 
     it('Cross API call', function(done) {
         request(app)
-         .post('/api/vectors/cross')
+         .post('/api/vector/cross')
          .send({
              vector1: {
                 x: 2,
@@ -169,7 +169,7 @@ describe('Vector API function tests', function() {
 
     it('Length API call', function(done) {
         request(app)
-         .post('/api/vectors/length')
+         .post('/api/vector/length')
          .send({
              vector: {
                 x: 2,
@@ -197,7 +197,7 @@ describe('Vector API function tests', function() {
 
     it('Normalize API call', function(done) {
         request(app)
-         .post('/api/vectors/normalize')
+         .post('/api/vector/normalize')
          .send({
              vector: {
                 x: 2,
@@ -230,7 +230,7 @@ describe('Vector API function tests', function() {
 
     it("Normalize fail test", function(done) {
         request(app)
-         .post('/api/vectors/normalize')
+         .post('/api/vector/normalize')
          .send({
              vector: {
                 x: 0,
@@ -254,7 +254,7 @@ describe('Vector API function tests', function() {
 
     it('Project API call', function(done) {
         request(app)
-         .post('/api/vectors/project')
+         .post('/api/vector/project')
          .send({
              vector1: {
                 x: 2,
@@ -295,7 +295,7 @@ describe('Vector API function tests', function() {
 
     it("Project fail test", function(done) {
         request(app)
-         .post('/api/vectors/project')
+         .post('/api/vector/project')
          .send({
              vector1: {
                 x: 0,
@@ -325,7 +325,7 @@ describe('Vector API function tests', function() {
 
     it('Cosphi API call', function(done) {
         request(app)
-         .post('/api/vectors/cosphi')
+         .post('/api/vector/cosphi')
          .send({
              vector1: {
                 x: 2,
@@ -361,7 +361,7 @@ describe('Vector API function tests', function() {
 
     it("Cosphi fail test", function(done) {
         request(app)
-         .post('/api/vectors/cosphi')
+         .post('/api/vector/cosphi')
          .send({
              vector1: {
                 x: 0,
