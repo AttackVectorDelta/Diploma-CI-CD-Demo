@@ -15,6 +15,10 @@ if(process.env.NODE_ENV != 'test'){
 
 app.use(helmet());
 
+//Routes
+app.use('/', require('./routes/index'));
+
+
 //Middleware
 app.use(middlewares.notFound);
 app.use(middlewares.general);

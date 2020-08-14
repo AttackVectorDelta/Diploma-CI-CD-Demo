@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Index page</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <strong>Diploma demo - <i class="fa fa-github" aria-hidden="true"></i> GitHub</strong>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1>Vector class</h1>
+                <p class="lead text-muted">On this page you can see examples of all the API functions of the vector class!</p>
+                <p>
+                    <a href="/" class="btn btn-primary my-2">Back home</a>
+                </p>
+            </div>
+        </section>
+
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mb-4">
+                        <div class="card mb-12 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Negate</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">This function negates the vector.</h6>
+                                <div class="card-text">
+                                    <p>Type: <code>POST</code></p>
+                                    <p>Path: <code>/api/vectors/negate</code></p>
+                                    <p>Example request:</p>
+                                    <p><code>{"vector": { "x": 1, "y":2, "z":3 }}</code></p>
+                                    <p>Params:<br>
+                                        <code>vector - object (required)</code><br>
+                                        <code>- x - float (required)</code><br>
+                                        <code>- y - float (required)</code><br>
+                                        <code>- z - float (required)</code><br>
+                                        <code>- h - float</code></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-4">
+                        <div class="card mb-12 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Add</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">This function adds two vectors.</h6>
+                                <div class="card-text">
+                                    <p>Type: <code>POST</code></p>
+                                    <p>Path: <code>/api/vectors/add</code></p>
+                                    <p>Example request:</p>
+                                    <p><code>{"vector1": { "x": 1, "y":2, "z":3 }, "vector2": { "x": 4, "y":5, "z":6
+                                            }}</code></p>
+                                    <p>Params:<br>
+                                        <code>vector1 - object (required)</code><br>
+                                        <code>- x - float (required)</code><br>
+                                        <code>- y - float (required)</code><br>
+                                        <code>- z - float (required)</code><br>
+                                        <code>- h - float</code><br>
+                                        <code>vector2 - object (required)</code><br>
+                                        <code>- x - float (required)</code><br>
+                                        <code>- y - float (required)</code><br>
+                                        <code>- z - float (required)</code><br>
+                                        <code>- h - float</code>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-4">
+                        <div class="card mb-12 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Scalar Product</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">This function calculates the scalar product of the vector.</h6>
+                                <div class="card-text">
+                                    <p>Type: <code>POST</code></p>
+                                    <p>Path: <code>/api/vectors/scalar</code></p>
+                                    <p>Example request:</p>
+                                    <p><code>{"scalar": 3.14, "vector": { "x": 1, "y":2, "z":3 }}</code></p>
+                                    <p>Params:<br>
+                                        <code>scalar - float (required)</code><br>
+                                        <code>vector - object (required)</code><br>
+                                        <code>- x - float (required)</code><br>
+                                        <code>- y - float (required)</code><br>
+                                        <code>- z - float (required)</code><br>
+                                        <code>- h - float</code>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-4">
+                        <div class="card mb-12 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Dot Product</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">This function calculates the dot product
+                                    between vector1 and vector2.</h6>
+                                <div class="card-text">
+                                    <p>Type: <code>POST</code></p>
+                                    <p>Path: <code>/api/vectors/dot</code></p>
+                                    <p>Example request:</p>
+                                    <p><code>{"vector1": { "x": 1, "y":2, "z":3 }, "vector2": { "x": 4, "y":5, "z":6
+                                    }}</code></p>
+                                    <p>Params:<br>
+                                        <code>vector1 - object (required)</code><br>
+                                        <code>- x - float (required)</code><br>
+                                        <code>- y - float (required)</code><br>
+                                        <code>- z - float (required)</code><br>
+                                        <code>- h - float</code><br>
+                                        <code>vector2 - object (required)</code><br>
+                                        <code>- x - float (required)</code><br>
+                                        <code>- y - float (required)</code><br>
+                                        <code>- z - float (required)</code><br>
+                                        <code>- h - float</code>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-4">
+                        <div class="card mb-12 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Cross Product</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">This function calculates the cross product
+                                    between vector1 and vector2.</h6>
+                                <div class="card-text">
+                                    <p>Type: <code>POST</code></p>
+                                    <p>Path: <code>/api/vectors/cross</code></p>
+                                    <p>Example request:</p>
+                                    <p><code>{"vector1": { "x": 1, "y":2, "z":3 }, "vector2": { "x": 4, "y":5, "z":6
+                                    }}</code></p>
+                                    <p>Params:<br>
+                                        <code>vector1 - object (required)</code><br>
+                                        <code>- x - float (required)</code><br>
+                                        <code>- y - float (required)</code><br>
+                                        <code>- z - float (required)</code><br>
+                                        <code>- h - float</code><br>
+                                        <code>vector2 - object (required)</code><br>
+                                        <code>- x - float (required)</code><br>
+                                        <code>- y - float (required)</code><br>
+                                        <code>- z - float (required)</code><br>
+                                        <code>- h - float</code>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-4">
+                        <div class="card mb-12 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Length</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">This function calculates the length of the
+                                    vector.</h6>
+                                <div class="card-text">
+                                    <p>Type: <code>POST</code></p>
+                                    <p>Path: <code>/api/vectors/length</code></p>
+                                    <p>Example request:</p>
+                                    <p><code>{"vector": { "x": 1, "y":2, "z":3 }}</code></p>
+                                    <p>Params:<br>
+                                        <code>vector - object (required)</code><br>
+                                        <code>- x - float (required)</code><br>
+                                        <code>- y - float (required)</code><br>
+                                        <code>- z - float (required)</code><br>
+                                        <code>- h - float</code></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-4">
+                        <div class="card mb-12 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Normalize</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">This function normalizes the vector.</h6>
+                                <div class="card-text">
+                                    <p>Type: <code>POST</code></p>
+                                    <p>Path: <code>/api/vectors/normalize</code></p>
+                                    <p>Example request:</p>
+                                    <p><code>{"vector": { "x": 1, "y":2, "z":3 }}</code></p>
+                                    <p>Params:<br>
+                                        <code>vector - object (required)</code><br>
+                                        <code>- x - float (required)</code><br>
+                                        <code>- y - float (required)</code><br>
+                                        <code>- z - float (required)</code><br>
+                                        <code>- h - float</code>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-4">
+                        <div class="card mb-12 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Project</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">This function projects the vector1 onto
+                                    vector2.</h6>
+                                <div class="card-text">
+                                    <p>Type: <code>POST</code></p>
+                                    <p>Path: <code>/api/vectors/project</code></p>
+                                    <p>Example request:</p>
+                                    <p><code>{"vector1": { "x": 1, "y":2, "z":3 }, "vector2": { "x": 4, "y":5, "z":6
+                                    }}</code></p>
+                                    <p>Params:<br>
+                                        <code>vector1 - object (required)</code><br>
+                                        <code>- x - float (required)</code><br>
+                                        <code>- y - float (required)</code><br>
+                                        <code>- z - float (required)</code><br>
+                                        <code>- h - float</code><br>
+                                        <code>vector2 - object (required)</code><br>
+                                        <code>- x - float (required)</code><br>
+                                        <code>- y - float (required)</code><br>
+                                        <code>- z - float (required)</code><br>
+                                        <code>- h - float</code>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="card mb-12 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">CosPhi</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">This calculates the angle between the vectors.
+                                </h6>
+                                <div class="card-text">
+                                    <p>Type: <code>POST</code></p>
+                                    <p>Path: <code>/api/vectors/cosphi</code></p>
+                                    <p>Example request:</p>
+                                    <p><code>{"vector1": { "x": 1, "y":2, "z":3 }, "vector2": { "x": 4, "y":5, "z":6
+                                    }}</code></p>
+                                    <p>Params:<br>
+                                        <code>vector1 - object (required)</code><br>
+                                        <code>- x - float (required)</code><br>
+                                        <code>- y - float (required)</code><br>
+                                        <code>- z - float (required)</code><br>
+                                        <code>- h - float</code><br>
+                                        <code>vector2 - object (required)</code><br>
+                                        <code>- x - float (required)</code><br>
+                                        <code>- y - float (required)</code><br>
+                                        <code>- z - float (required)</code><br>
+                                        <code>- h - float</code>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="text-muted">
+        <div class="container">
+            <p>Album example is &copy; Bootstrap.</p>
+        </div>
+    </footer>
+
+</html>
