@@ -54,6 +54,40 @@ describe('Matrix class tests', function() {
         assert.equal(correctString, result);
     });
 
+    //Negate function test
+
+    it('Negate function test', function() {
+        let matrixObj = new Matrix4f(
+            1, 2.5, -3, -4.25,
+            -5, -6.5, 7, 8,
+            9, -10, 11, 12.25,
+            13.125, 14, -15.5, 16
+        );
+
+        let result = Matrix4f.negate(matrixObj);
+
+        assert.instanceOf(result, Matrix4f);
+        assert.equal(-1, result.x1);
+        assert.equal(-2.5, result.x2);
+        assert.equal(3, result.x3);
+        assert.equal(4.25, result.x4);
+
+        assert.equal(5, result.y1);
+        assert.equal(6.5, result.y2);
+        assert.equal(-7, result.y3);
+        assert.equal(-8, result.y4);
+
+        assert.equal(-9, result.z1);
+        assert.equal(10, result.z2);
+        assert.equal(-11, result.z3);
+        assert.equal(-12.25, result.z4);
+
+        assert.equal(-13.125, result.h1);
+        assert.equal(-14, result.h2);
+        assert.equal(15.5, result.h3);
+        assert.equal(-16, result.h4);
+    });
+
     //Add function tests
 
     it('Add function test', function() {
@@ -239,7 +273,7 @@ describe('Matrix class tests', function() {
         assert.equal(16*4+11*8+5*12+7*16, result.h4);
     });
 
-    it('MultiplyScalar incorrect input test', function() {
+    it('Multiply incorrect input test', function() {
         let matrixObj1 = new Matrix4f(
             4, 6, 3, 4,
             5, 12, -7, 8,

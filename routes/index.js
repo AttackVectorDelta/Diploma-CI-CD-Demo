@@ -10,4 +10,8 @@ router.get('/vector', (req, res) => {
     res.sendFile(path.join(__dirname, '../public', 'vector.html'));
 })
 
+router.get('/matrix', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public', 'matrix.html'));
+})
+
 module.exports = router;

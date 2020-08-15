@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Matrix API docs</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <strong>Diploma demo - <i class="fa fa-github" aria-hidden="true"></i> GitHub</strong>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1>Vector class</h1>
+                <p class="lead text-muted">On this page you can see examples of all the API calls for the Matrix class!</p>
+                <p>
+                    <a href="/" class="btn btn-primary my-2">Back home</a>
+                </p>
+            </div>
+        </section>
+
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mb-4">
+                        <div class="card mb-12 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Negate</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">This function negates the matrix.</h6>
+                                <div class="card-text">
+                                    <p>Type: <code>POST</code></p>
+                                    <p>Path: <code>/api/matrix/negate</code></p>
+                                    <p>Example request:</p>
+                                    <p>
+                                        <code>{
+                                            "matrix": { 
+                                                "x1": 1, "x2":2, "x3":3, "x4":4,
+                                                "y1": 5, "y2":6, "y3":7, "y4":8,
+                                                "z1": 9, "z2":10, "z3":11, "z4":12,
+                                                "h1": 13, "h2":14, "h3":15, "h4":16,
+                                            }
+                                        }
+                                        </code>
+                                    </p>
+                                    <p>Params:<br>
+                                        <code>matrix - object (required)</code><br>
+                                        <code>- x1 - float (required)</code><br>
+                                        <code>- x2 - float (required)</code><br>
+                                        <code>- x3 - float (required)</code><br>
+                                        <code>- x4 - float (required)</code><br>
+                                        <code>- y1 - float (required)</code><br>
+                                        <code>- y2 - float (required)</code><br>
+                                        <code>- y3 - float (required)</code><br>
+                                        <code>- y4 - float (required)</code><br>
+                                        <code>- z1 - float (required)</code><br>
+                                        <code>- z2 - float (required)</code><br>
+                                        <code>- z3 - float (required)</code><br>
+                                        <code>- z4 - float (required)</code><br>
+                                        <code>- h1 - float (required)</code><br>
+                                        <code>- h2 - float (required)</code><br>
+                                        <code>- h3 - float (required)</code><br>
+                                        <code>- h4 - float (required)</code>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-4">
+                        <div class="card mb-12 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Add</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">This function adds two matrices.</h6>
+                                <div class="card-text">
+                                    <p>Type: <code>POST</code></p>
+                                    <p>Path: <code>/api/matrix/add</code></p>
+                                    <p>Example request:</p>
+                                    <p>
+                                        <code>{
+                                            "matrix1": { 
+                                                "x1": 1, "x2":2, "x3":3, "x4":4,
+                                                "y1": 5, "y2":6, "y3":7, "y4":8,
+                                                "z1": 9, "z2":10, "z3":11, "z4":12,
+                                                "h1": 13, "h2":14, "h3":15, "h4":16,
+                                            },
+
+                                            "matrix2": { 
+                                                "x1": 16, "x2":15, "x3":14, "x4":13,
+                                                "y1": 12, "y2":11, "y3":10, "y4":9,
+                                                "z1": 8, "z2":7, "z3":6, "z4":5,
+                                                "h1": 4, "h2":3, "h3":2, "h4":1,
+                                            }
+                                        }</code>
+                                    </p>
+                                    <p>Params:<br>
+                                        <code>matrix1 - object (required)</code><br>
+                                        <code>- x1 - float (required)</code><br>
+                                        <code>- x2 - float (required)</code><br>
+                                        <code>- x3 - float (required)</code><br>
+                                        <code>- x4 - float (required)</code><br>
+                                        <code>- y1 - float (required)</code><br>
+                                        <code>- y2 - float (required)</code><br>
+                                        <code>- y3 - float (required)</code><br>
+                                        <code>- y4 - float (required)</code><br>
+                                        <code>- z1 - float (required)</code><br>
+                                        <code>- z2 - float (required)</code><br>
+                                        <code>- z3 - float (required)</code><br>
+                                        <code>- z4 - float (required)</code><br>
+                                        <code>- h1 - float (required)</code><br>
+                                        <code>- h2 - float (required)</code><br>
+                                        <code>- h3 - float (required)</code><br>
+                                        <code>- h4 - float (required)</code>
+
+                                        <code>matrix2 - object (required)</code><br>
+                                        <code>- x1 - float (required)</code><br>
+                                        <code>- x2 - float (required)</code><br>
+                                        <code>- x3 - float (required)</code><br>
+                                        <code>- x4 - float (required)</code><br>
+                                        <code>- y1 - float (required)</code><br>
+                                        <code>- y2 - float (required)</code><br>
+                                        <code>- y3 - float (required)</code><br>
+                                        <code>- y4 - float (required)</code><br>
+                                        <code>- z1 - float (required)</code><br>
+                                        <code>- z2 - float (required)</code><br>
+                                        <code>- z3 - float (required)</code><br>
+                                        <code>- z4 - float (required)</code><br>
+                                        <code>- h1 - float (required)</code><br>
+                                        <code>- h2 - float (required)</code><br>
+                                        <code>- h3 - float (required)</code><br>
+                                        <code>- h4 - float (required)</code>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-4">
+                        <div class="card mb-12 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Transpose</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">This function transposes the matrix.</h6>
+                                <div class="card-text">
+                                    <p>Type: <code>POST</code></p>
+                                    <p>Path: <code>/api/matrix/transpose</code></p>
+                                    <p>Example request:</p>
+                                    <p>
+                                        <code>{
+                                            "matrix": { 
+                                                "x1": 1, "x2":2, "x3":3, "x4":4,
+                                                "y1": 5, "y2":6, "y3":7, "y4":8,
+                                                "z1": 9, "z2":10, "z3":11, "z4":12,
+                                                "h1": 13, "h2":14, "h3":15, "h4":16,
+                                            }
+                                        }</code>
+                                    </p>
+                                    <p>Params:<br>
+                                        <code>matrix - object (required)</code><br>
+                                        <code>- x1 - float (required)</code><br>
+                                        <code>- x2 - float (required)</code><br>
+                                        <code>- x3 - float (required)</code><br>
+                                        <code>- x4 - float (required)</code><br>
+                                        <code>- y1 - float (required)</code><br>
+                                        <code>- y2 - float (required)</code><br>
+                                        <code>- y3 - float (required)</code><br>
+                                        <code>- y4 - float (required)</code><br>
+                                        <code>- z1 - float (required)</code><br>
+                                        <code>- z2 - float (required)</code><br>
+                                        <code>- z3 - float (required)</code><br>
+                                        <code>- z4 - float (required)</code><br>
+                                        <code>- h1 - float (required)</code><br>
+                                        <code>- h2 - float (required)</code><br>
+                                        <code>- h3 - float (required)</code><br>
+                                        <code>- h4 - float (required)</code>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-4">
+                        <div class="card mb-12 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">MultiplyScalar</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">This function multiplies the matrix by a scalar.</h6>
+                                <div class="card-text">
+                                    <p>Type: <code>POST</code></p>
+                                    <p>Path: <code>/api/matrix/scalar</code></p>
+                                    <p>Example request:</p>
+                                    <p>
+                                        <code>{
+                                            scalar: 2
+                                            "matrix": { 
+                                                "x1": 1, "x2":2, "x3":3, "x4":4,
+                                                "y1": 5, "y2":6, "y3":7, "y4":8,
+                                                "z1": 9, "z2":10, "z3":11, "z4":12,
+                                                "h1": 13, "h2":14, "h3":15, "h4":16,
+                                            }
+                                        }</code>
+                                    </p>
+                                    <p>Params:<br>
+                                        <code>scalar - float (required)</code><br>
+                                        <code>matrix - object (required)</code><br>
+                                        <code>- x1 - float (required)</code><br>
+                                        <code>- x2 - float (required)</code><br>
+                                        <code>- x3 - float (required)</code><br>
+                                        <code>- x4 - float (required)</code><br>
+                                        <code>- y1 - float (required)</code><br>
+                                        <code>- y2 - float (required)</code><br>
+                                        <code>- y3 - float (required)</code><br>
+                                        <code>- y4 - float (required)</code><br>
+                                        <code>- z1 - float (required)</code><br>
+                                        <code>- z2 - float (required)</code><br>
+                                        <code>- z3 - float (required)</code><br>
+                                        <code>- z4 - float (required)</code><br>
+                                        <code>- h1 - float (required)</code><br>
+                                        <code>- h2 - float (required)</code><br>
+                                        <code>- h3 - float (required)</code><br>
+                                        <code>- h4 - float (required)</code>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-4">
+                        <div class="card mb-12 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Multiply</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">This function multiplies a matrix by another matrix.</h6>
+                                <div class="card-text">
+                                    <p>Type: <code>POST</code></p>
+                                    <p>Path: <code>/api/matrix/multiply</code></p>
+                                    <p>Example request:</p>
+                                    <p>
+                                        <code>{
+                                            "matrix1": { 
+                                                "x1": 1, "x2":2, "x3":3, "x4":4,
+                                                "y1": 5, "y2":6, "y3":7, "y4":8,
+                                                "z1": 9, "z2":10, "z3":11, "z4":12,
+                                                "h1": 13, "h2":14, "h3":15, "h4":16,
+                                            },
+
+                                            "matrix2": { 
+                                                "x1": 16, "x2":15, "x3":14, "x4":13,
+                                                "y1": 12, "y2":11, "y3":10, "y4":9,
+                                                "z1": 8, "z2":7, "z3":6, "z4":5,
+                                                "h1": 4, "h2":3, "h3":2, "h4":1,
+                                            }
+                                        }</code>
+                                    </p>
+                                    <p>Params:<br>
+                                        <code>matrix1 - object (required)</code><br>
+                                        <code>- x1 - float (required)</code><br>
+                                        <code>- x2 - float (required)</code><br>
+                                        <code>- x3 - float (required)</code><br>
+                                        <code>- x4 - float (required)</code><br>
+                                        <code>- y1 - float (required)</code><br>
+                                        <code>- y2 - float (required)</code><br>
+                                        <code>- y3 - float (required)</code><br>
+                                        <code>- y4 - float (required)</code><br>
+                                        <code>- z1 - float (required)</code><br>
+                                        <code>- z2 - float (required)</code><br>
+                                        <code>- z3 - float (required)</code><br>
+                                        <code>- z4 - float (required)</code><br>
+                                        <code>- h1 - float (required)</code><br>
+                                        <code>- h2 - float (required)</code><br>
+                                        <code>- h3 - float (required)</code><br>
+                                        <code>- h4 - float (required)</code>
+
+                                        <code>matrix2 - object (required)</code><br>
+                                        <code>- x1 - float (required)</code><br>
+                                        <code>- x2 - float (required)</code><br>
+                                        <code>- x3 - float (required)</code><br>
+                                        <code>- x4 - float (required)</code><br>
+                                        <code>- y1 - float (required)</code><br>
+                                        <code>- y2 - float (required)</code><br>
+                                        <code>- y3 - float (required)</code><br>
+                                        <code>- y4 - float (required)</code><br>
+                                        <code>- z1 - float (required)</code><br>
+                                        <code>- z2 - float (required)</code><br>
+                                        <code>- z3 - float (required)</code><br>
+                                        <code>- z4 - float (required)</code><br>
+                                        <code>- h1 - float (required)</code><br>
+                                        <code>- h2 - float (required)</code><br>
+                                        <code>- h3 - float (required)</code><br>
+                                        <code>- h4 - float (required)</code>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="text-muted">
+        <div class="container">
+            <p>Album example is &copy; Bootstrap.</p>
+        </div>
+    </footer>
+
+</html>

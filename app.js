@@ -18,6 +18,7 @@ app.use(helmet());
 //Routes
 app.use('/', require('./routes/index'));
 app.use('/api/vector', require('./routes/vectorApi'));
+app.use('/api/matrix', require('./routes/matrixApi'));
 
 
 //Middleware

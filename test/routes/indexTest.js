@@ -17,7 +17,7 @@ describe('Server function tests', function() {
         })
     });
 
-    it('Serving vectors page', function(done){
+    it('Serving vector docs page', function(done){
         request(app)
          .get('/vector')
          .expect(200)
@@ -26,7 +26,21 @@ describe('Server function tests', function() {
                 return done(err);
             }
 
-            expect(res.text).to.include("On this page you can see examples of all the API functions of the vector class!");
+            expect(res.text).to.include("On this page you can see examples of all the API calls for the Vector class!");
+            done();
+        })
+    });
+
+    it('Serving matrix docs page', function(done){
+        request(app)
+         .get('/matrix')
+         .expect(200)
+         .end(function(err, res) {
+            if(err){
+                return done(err);
+            }
+
+            expect(res.text).to.include("On this page you can see examples of all the API calls for the Matrix class!");
             done();
         })
     });
