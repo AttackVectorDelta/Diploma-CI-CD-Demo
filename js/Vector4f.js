@@ -10,7 +10,7 @@ class Vector4f {
 
     static negate(input){
         if(input instanceof Vector4f != true){
-            throw "Parameter is not a vector!";
+            throw new Error("Parameter is not a vector!");
         }
 
         return new Vector4f(-input.x, -input.y, -input.z, input.h);
@@ -18,7 +18,7 @@ class Vector4f {
 
     static add(input1, input2) {
         if(input1 instanceof Vector4f != true || input2 instanceof Vector4f != true){
-            throw "Parameters are not vectors!"
+            throw new Error("Parameters are not vectors!")
         }
 
         return new Vector4f(
@@ -31,14 +31,14 @@ class Vector4f {
 
     static scalarProduct(input1, input2){
         if(typeof input1 != "number" || input2 instanceof Vector4f != true){
-            throw "Check parameter types!"
+            throw new Error("Check parameter types!")
         }
         return new Vector4f(input2.x*input1, input2.y*input1, input2.z*input1, input2.h);
     }
 
     static dotProduct(input1, input2) {
         if(input1 instanceof Vector4f != true || input2 instanceof Vector4f != true){
-            throw "Parameters are not vectors!"
+            throw new Error("Parameters are not vectors!")
         }
 
         return input1.x*input2.x+input1.y*input2.y+input1.z*input2.z;
@@ -46,7 +46,7 @@ class Vector4f {
 
     static crossProduct(input1, input2){
         if(input1 instanceof Vector4f != true || input2 instanceof Vector4f != true){
-            throw "Parameters are not vectors!"
+            throw new Error("Parameters are not vectors!")
         }
 
         return new Vector4f(
@@ -59,7 +59,7 @@ class Vector4f {
 
     static length(input){
         if(input instanceof Vector4f != true){
-            throw "Parameters are not vectors!"
+            throw new Error("Parameters are not vectors!")
         }
 
         return Math.sqrt(input.x*input.x+input.y*input.y+input.z*input.z);
@@ -67,13 +67,13 @@ class Vector4f {
 
     static normalize(input){
         if(input instanceof Vector4f != true){
-            throw "Parameters are not vectors!"
+            throw new Error("Parameters are not vectors!")
         }
 
         var vectorLength = this.length(input);
 
         if(vectorLength==0){
-            throw "Vector length is equal to 0. Cannot divide!";
+            throw new Error("Vector length is equal to 0. Cannot divide!");
         }
 
         return new Vector4f(
@@ -86,7 +86,7 @@ class Vector4f {
 
     static project(input1, input2){
         if(input1 instanceof Vector4f != true || input2 instanceof Vector4f != true){
-            throw "Parameters are not vectors!"
+            throw new Error("Parameters are not vectors!")
         }
 
         var input1Length = this.length(input1);
@@ -94,7 +94,7 @@ class Vector4f {
         var dotProdukt = this.dotProduct(input1,input2);
 
         if(input1Length == 0){
-            throw "Vector 1 is 0 units long. Cannot divide!"
+            throw new Error("Vector 1 is 0 units long. Cannot divide!")
         }
 
         var scalar = dotProdukt/(input1Length*input1Length);
@@ -105,7 +105,7 @@ class Vector4f {
 
     static cosPhi(input1, input2){
         if(input1 instanceof Vector4f != true || input2 instanceof Vector4f != true){
-            throw "Parameters are not vectors!"
+            throw new Error("Parameters are not vectors!")
         }
 
         var input1Length = this.length(input1);
@@ -114,7 +114,7 @@ class Vector4f {
         var product = this.dotProduct(input1, input2);
 
         if(input1Length*input2Length == 0){
-            throw "Sum of vector lengths equals 0. Cannot divide!";
+            throw new Error("Sum of vector lengths equals 0. Cannot divide!");
         }
 
         return product/(input1Length*input2Length);

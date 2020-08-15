@@ -23,7 +23,7 @@ class Matrix4f{
 
     static negate(input){
         if(input instanceof Matrix4f != true){
-            throw "Input is not a matrix!"
+            throw new Error("Input is not a matrix!")
         }
 
         return new Matrix4f(
@@ -36,7 +36,7 @@ class Matrix4f{
 
     static add(input1, input2){
         if(input1 instanceof Matrix4f != true || input2 instanceof Matrix4f != true){
-            throw "Input parameters are not matrices!"
+            throw new Error("Input parameters are not matrices!")
         }
 
         return new Matrix4f(
@@ -49,7 +49,7 @@ class Matrix4f{
 
     static transpose(input){
         if(input instanceof Matrix4f != true){
-            throw "Input is not a matrix!"
+            throw new Error("Input is not a matrix!")
         }
 
         return new Matrix4f(
@@ -62,7 +62,7 @@ class Matrix4f{
 
     static multiplyScalar(input1, input2){
         if(typeof input1 !="number" || input2 instanceof Matrix4f != true){
-            throw "Check input parameter types!"
+            throw new Error("Check input parameter types!")
         }
 
         return new Matrix4f(
@@ -76,7 +76,7 @@ class Matrix4f{
 
     static multiply(input1, input2){
         if(input1 instanceof Matrix4f != true || input2 instanceof Matrix4f != true){
-            throw "Input parameters are not matrices!"
+            throw new Error("Input parameters are not matrices!")
         }
 
         return new Matrix4f(
